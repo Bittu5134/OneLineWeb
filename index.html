@@ -95,6 +95,7 @@
             time.textContent = e.toTimeString().split(" ")[0];
             const n = e.getSeconds();
             document.documentElement.style.setProperty("--rot", 6 * n + "deg");
+            playTick();
         }
         updateClock();
         setInterval(updateClock, 1000);
