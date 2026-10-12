@@ -1,85 +1,28 @@
-# shortscript ⚡
+# OneLineWeb
 
-> Aggressive HTML + CSS + JS + WebGL single-file minifier & self-extracting Data URI packer.
+Data URI is a web standard that allows you to embed inline data (like documents, images, or code) directly into a text string instead of linking to an external server.
 
-`shortscript` is a high-density build tool designed for strict byte-budget web demos (e.g., JS1k, JS13k, CSS size battles, single-file bookmarks, or sub-3KB data URIs).
+This repo contains Data URIs that are fully functional websites. Just copy the code's and paste them into your browser url
 
-It combines multiple minification engines with cross-language AST & selector mangling to pack an entire self-contained application into a URL-encoded `data:text/html,...` URI.
 
----
+# Glitchy Clock
 
-## ✨ Features
+![](./media/glitchy-clock.webp)
 
-- **Cross-File Identifier Mangling**: Synchronously detects and mangles HTML IDs and classes down to single-character tokens across HTML attributes, CSS selectors, and JavaScript DOM queries / global references.
-- **Aggressive CSS Purging & Restructuring**: 
-  - Purges unused CSS rules, keyframes, and CSS custom properties via `purgecss`.
-  - Combines identical rule blocks and merges semantic shorthands using `clean-css` (Level 2 advanced).
-  - Minifies inline `style="..."` attributes.
-- **JavaScript & Shader Compression**:
-  - Compresses JS using `terser` with top-level scope mangling, aggressive dead-code elimination, and constant folding.
-  - GLSL shader minification for shader string literals embedded in JavaScript template literals.
-- **Self-Extracting Stream Decompression**:
-  - Evaluates both browser-native `DecompressionStream` and `roadroller` LZ-based compression.
-  - Generates self-extracting single-file HTML loaders that unroll the app into the DOM in real time.
-- **Budget Tracking & Visual Progress**: Real-time terminal progress bar comparing current size against your target byte budget (default: 3 KB).
-- **Instant Live-Reload Dev Server**: Built-in HTTP and WebSocket server for live browser preview and hot reloading during editing.
+Uses HTML, CSS, JS, WebAudioAPI, WEBGL and CanvasAPI to create an interactive clock.
 
----
+```yaml
+data:text/html,%3Cscript%3Efetch('data:;base64,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').then(r=%3Enew Response(r.body.pipeThrough(new DecompressionStream('deflate-raw'))).text()).then(t=%3E%7Bdocument.open();document.write(t);document.close()%7D)%3C/script%3E
+```
 
-## 🚀 Getting Started
 
-### Prerequisites
+# Compile locally
 
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-
-### Installation
+A custom script is used to compress the Data URI to make the most of the URI's limited size. You can run the script locally:
 
 ```bash
-git clone https://github.com/your-username/shortscript.git
-cd shortscript
+git clone https://github.com/Bittu5134/OneLineWeb.git
+cd OneLineWeb
 npm install
-```
-
-### Development (Live Reload Server)
-
-Start the development server with live watch mode:
-
-```bash
 npm run dev
-# or
-npm run watch
 ```
-
-- **Source Preview**: `http://localhost:3000/`
-- **Minified Preview**: `http://localhost:3000/minified`
-- **Raw Data URI**: `http://localhost:3000/data-uri`
-
-### Production Build
-
-Run the builder once without starting the dev server:
-
-```bash
-npm run build
-```
-
-This generates:
-- `dist/minified.html`: Minified HTML/CSS/JS without compression wrappers.
-- `dist/packed.html`: Self-extracting HTML document.
-- `dist/data-uri.txt`: Ready-to-use URL-encoded `data:text/html,...` string.
-
----
-
-## ⚙️ Configuration
-
-In `build.js`, you can adjust:
-
-```javascript
-const BUDGET_BYTES = 3 * 1024; // Target size budget in bytes (e.g., 3 KB)
-const PORT = process.env.PORT || 3000;
-```
-
----
-
-## 📄 License
-
-[MIT](LICENSE)
