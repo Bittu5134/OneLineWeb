@@ -1,0 +1,21 @@
+{
+  "name": "shortscript",
+  "version": "1.0.0",
+  "description": "Aggressive HTML+CSS+JS+WebGL single-file minifier & Data URI packer",
+  "type": "module",
+  "scripts": {
+    "dev": "node build.js",
+    "watch": "node build.js",
+    "build": "node build.js --no-watch"
+  },
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "picocolors": "^1.1.1",
+    "purgecss": "^8.0.0",
+    "roadroller": "^2.1.0",
+    "terser": "^5.51.2",
+    "ws": "^8.22.0"
+  }
+}
