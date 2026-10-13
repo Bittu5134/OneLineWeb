@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node build.js",
     "watch": "node build.js",
-    "build": "node build.js --no-watch"
+    "build": "node build.js --no-watch",
+    "new": "node scripts/new-page.js"
   },
   "dependencies": {
     "chokidar": "^5.0.0",
